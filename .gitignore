@@ -1,3 +1,4 @@
 dist/*
 *.sw?
 *.log
+commit_msg_buf
