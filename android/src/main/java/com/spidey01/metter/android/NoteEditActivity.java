@@ -1,12 +1,9 @@
 package com.spidey01.metter.android;
 
-import android.app.ListActivity;
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
 
-public class NoteListActivity extends ListActivity {
+public class NoteEditActivity extends Activity {
 
     /** The activity is being created.
      */
@@ -14,7 +11,7 @@ public class NoteListActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.note_list);
+        setContentView(R.layout.note_edit);
     }
 
     /* The activity is about to become visible.
@@ -22,7 +19,6 @@ public class NoteListActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     /* The activity has become visible (it is now "resumed").
@@ -51,19 +47,5 @@ public class NoteListActivity extends ListActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
-
-    /* This method will be called when an item in the list is selected.
-     *
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        Intent n = new Intent(
-                NoteListActivity.this,
-                NoteEditActivity.class);
-        startActivity(n);
     }
 }
