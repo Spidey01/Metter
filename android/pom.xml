@@ -18,6 +18,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>android.support</groupId>
+      <artifactId>compatibility-v4</artifactId>
+      <version>r9</version>
+    </dependency>
+    <dependency>
       <groupId>com.spidey01.metter.lib</groupId>
       <artifactId>lib</artifactId>
       <version>0.0.1-SNAPSHOT</version>
