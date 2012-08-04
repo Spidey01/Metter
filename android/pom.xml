@@ -38,6 +38,10 @@
         <extensions>true</extensions>
         <configuration>
           <undeployBeforeDeploy>true</undeployBeforeDeploy>
+          <sdk>
+            <!-- set this to match targetSdkVersion from your manifests <uses-sdk/> -->
+            <platform>15</platform>
+          </sdk>
         </configuration>
       </plugin>
     </plugins>
