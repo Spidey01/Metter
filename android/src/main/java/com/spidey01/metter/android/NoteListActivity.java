@@ -67,3 +67,4 @@ public class NoteListActivity extends ListActivity {
         startActivity(n);
     }
 }
+
