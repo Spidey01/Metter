@@ -1,12 +1,12 @@
 package com.spidey01.metter.android;
 
-import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
-public class NoteListActivity extends ListActivity {
+public class NoteListActivity extends FragmentActivity {
 
     /** The activity is being created.
      */
@@ -15,6 +15,15 @@ public class NoteListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.note_list);
+
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment frag = fm.findFragmentById(R.id.note_list_content);
+
+        if (frag == null) {
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.note_edit_content, new NoteListFragment());
+            ft.commit();
+        }
     }
 
     /* The activity is about to become visible.
@@ -51,20 +60,6 @@ public class NoteListActivity extends ListActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
-
-    /* This method will be called when an item in the list is selected.
-     *
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        Intent n = new Intent(
-                NoteListActivity.this,
-                NoteEditActivity.class);
-        startActivity(n);
     }
 }
 

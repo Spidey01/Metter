@@ -4,12 +4,11 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   >
-  <ListView android:id="@android:id/list"
+  <fragment
+    android:id="@+id/note_list_content"
+    android:name="com.spidey01.metter.android.NoteListFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"/>
-  <TextView android:id="@android:id/empty"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="You appear to have no Notes."/>
+    android:layout_height="match_parent">
+    <!-- Preview: layout=@layout/note_list_fragment -->
+  </fragment>
 </LinearLayout>
