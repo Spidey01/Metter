@@ -14,7 +14,8 @@ public class NoteListActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.note_list);
+        setContentView(R.layout.main);
+        // setContentView(R.layout.note_list);
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment frag = fm.findFragmentById(R.id.note_list_content);
