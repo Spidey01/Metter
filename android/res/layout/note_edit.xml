@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
   android:orientation="vertical" >
   <fragment
     android:id="@+id/note_edit_content"
     android:name="com.spidey01.metter.android.NoteEditFragment"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <!-- Preview: layout=@layout/fragment_basic -->
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Preview: layout=@layout/note_edit_fragment -->
   </fragment>
 </LinearLayout>
