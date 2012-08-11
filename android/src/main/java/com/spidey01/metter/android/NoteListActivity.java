@@ -15,14 +15,18 @@ public class NoteListActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.main);
-        // setContentView(R.layout.note_list);
 
         FragmentManager fm = getSupportFragmentManager();
-        Fragment frag = fm.findFragmentById(R.id.note_list_content);
+        Fragment listFrag = fm.findFragmentById(R.id.note_list_content);
+        Fragment editFrag = fm.findFragmentById(R.id.note_edit_content);
 
-        if (frag == null) {
+        if (listFrag == null) {
             FragmentTransaction ft = fm.beginTransaction();
-            ft.add(R.id.note_edit_content, new NoteListFragment());
+            ft.add(R.id.note_list_content, new NoteListFragment());
+            // handle dual pane layout if supported
+            if (editFrag != null) {
+                ft.add(R.id.note_edit_content, new NoteEditFragment());
+            }
             ft.commit();
         }
     }
